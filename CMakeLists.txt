@@ -61,17 +61,17 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
-add_executable(service_server src/service_server.cpp)
-target_link_libraries(service_server ${catkin_LIBRARIES})
+#add_executable(service_server src/service_server.cpp)
+#target_link_libraries(service_server ${catkin_LIBRARIES})
 
-add_executable(service_client src/service_client.cpp)
-target_link_libraries(service_client ${catkin_LIBRARIES})
+#add_executable(service_client src/service_client.cpp)
+#target_link_libraries(service_client ${catkin_LIBRARIES})
 
-add_executable(fibonacci_client src/fibonacci_client.cpp)
-target_link_libraries(fibonacci_client ${catkin_LIBRARIES})
+#add_executable(fibonacci_client src/fibonacci_client.cpp)
+#target_link_libraries(fibonacci_client ${catkin_LIBRARIES})
 
-add_executable(fibonacci_server src/fibonacci_server.cpp)
-target_link_libraries(fibonacci_server ${catkin_LIBRARIES})
+#add_executable(fibonacci_server src/fibonacci_server.cpp)
+#target_link_libraries(fibonacci_server ${catkin_LIBRARIES})
 
 #add_executable(tiago_bend_elbow src/tiago_bend_elbow.cpp)
 #target_link_libraries(tiago_bend_elbow ${catkin_LIBRARIES})
