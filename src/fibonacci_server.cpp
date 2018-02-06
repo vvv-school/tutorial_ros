@@ -38,7 +38,10 @@ public:
     feedback_.sequence.push_back(1);
 
     // publish info to the console for the user
-    ROS_INFO("%s: Executing, creating fibonacci sequence of order %i with seeds %i, %i", action_name_.c_str(), goal->order, feedback_.sequence[0], feedback_.sequence[1]);
+    ROS_INFO_STREAM(action_name_.c_str() << 
+                    ": Executing, creating fibonacci sequence of order " << 
+                    goal->order << " with seeds " << feedback_.sequence[0] << 
+                    " , " << feedback_.sequence[1]);
 
     // start executing the action
     for(int i=1; i<=goal->order; i++)
@@ -46,7 +49,7 @@ public:
       // check that preempt has not been requested by the client
       if (as_.isPreemptRequested() || !ros::ok())
       {
-        ROS_INFO("%s: Preempted", action_name_.c_str());
+        ROS_INFO_STREAM(action_name_ << ": Preempted");
         // set the action state to preempted
         as_.setPreempted();
         success = false;
@@ -62,7 +65,7 @@ public:
     if(success)
     {
       result_.sequence = feedback_.sequence;
-      ROS_INFO("%s: Succeeded", action_name_.c_str());
+      ROS_INFO_STREAM(action_name_ << ": Preempted");
       // set the action state to succeeded
       as_.setSucceeded(result_);
     }

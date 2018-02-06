@@ -8,11 +8,13 @@ int main (int argc, char **argv)
 
   actionlib::SimpleActionClient<XYZ> ac("ACTION_NAME", true);
 
-  ROS_INFO("Waiting for action server to start.");
+  ROS_INFO_STREAM("Waiting for action server to start.");
   // wait for the action server to start
   ac.waitForServer(); //will wait for infinite time
 
-  ROS_INFO("Action server started, sending goal.");
+  ROS_INFO_STREAM("Action server started, sending goal.");
+
+  // http://docs.ros.org/kinetic/api/control_msgs/html/index-msg.html
   // send a goal to the action
   XYZ goal;
 
@@ -42,10 +44,10 @@ int main (int argc, char **argv)
   if (finished_before_timeout)
   {
     actionlib::SimpleClientGoalState state = ac.getState();
-    ROS_INFO("Action finished: %s",state.toString().c_str());
+    ROS_INFO_STREAM("Action finished: " << state.toString());
   }
   else
-    ROS_INFO("Action did not finish before the time out.");
+    ROS_INFO_STREAM("Action did not finish before the time out.");
 
   return 0;
 }
