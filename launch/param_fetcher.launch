@@ -1,5 +1,8 @@
 <launch>
   <node name="read_param" pkg="tutorial" type="read_param" output="screen">
     <param name="number" value="42"/>
+    <rosparam param="list" >
+      [1, 2, 3, 4, 5] <!-- YAML compatible param parsing -->
+    </rosparam>
   </node>
 </launch>
