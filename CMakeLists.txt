@@ -61,6 +61,9 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 
+add_executable(read_param src/read_param.cpp)
+target_link_libraries(read_param ${catkin_LIBRARIES})
+
 #add_executable(service_server src/service_server.cpp)
 #target_link_libraries(service_server ${catkin_LIBRARIES})
 
