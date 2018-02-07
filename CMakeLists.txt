@@ -48,7 +48,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -66,9 +66,11 @@ target_link_libraries(read_param ${catkin_LIBRARIES})
 
 #add_executable(service_server src/service_server.cpp)
 #target_link_libraries(service_server ${catkin_LIBRARIES})
+#add_dependencies(service_server ${catkin_EXPORTED_TARGETS})
 
 #add_executable(service_client src/service_client.cpp)
 #target_link_libraries(service_client ${catkin_LIBRARIES})
+#add_dependencies(service_client ${catkin_EXPORTED_TARGETS})
 
 #add_executable(fibonacci_client src/fibonacci_client.cpp)
 #target_link_libraries(fibonacci_client ${catkin_LIBRARIES})
